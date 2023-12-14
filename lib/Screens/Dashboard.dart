@@ -52,6 +52,7 @@ class _Dashboard extends State<Dashboard>{
   Widget build(BuildContext context){
      return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.black,
         title: Text("$interface",style: TextStyle(color: Colors.white)),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
