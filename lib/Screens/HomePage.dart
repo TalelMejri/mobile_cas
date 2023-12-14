@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_cas/Screens/Steps/StepFour.dart';
 import 'package:mobile_cas/Screens/Steps/StepOne.dart';
+import 'package:mobile_cas/Screens/Steps/StepThree.dart';
+import 'package:mobile_cas/Screens/Steps/StepTwo.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -10,25 +13,56 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  late Widget steps=stepOne();
+  late Widget steps = const StepOne();
+
+  int compt=1;
+
+  @override
+  void initState() {
+    super.initState();
+    if(compt==1){
+      steps = const StepOne();
+    }else if(compt==2){
+      steps = const StepTwo();
+    }else if(compt==3){
+     steps= const StepThree();
+    }else if(compt==4){
+     steps= const StepFour();
+    }
+  }
+
+  void NextStep(){
+    setState(() {
+      if(compt==1){
+        steps = const StepTwo();
+        compt++;
+      }else if(compt==2){
+        steps = const StepThree();
+        compt++;
+      }else if(compt==3){
+        steps= const StepFour();
+        compt++;
+      }else if(compt==4){
+        steps= const StepOne();
+        compt=1;
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
      return Scaffold(
       appBar: AppBar(
-        actions: [
-          IconButton(onPressed: (){}, icon: const Icon(Icons.navigate_next))
-        ],
+        backgroundColor: Colors.white,
+        elevation: 0,
       ),
-      body:Center(
-          child:Padding(padding: EdgeInsets.all(25),child: Column(children: [
-          steps,
-          ElevatedButton(onPressed: (){
-          setState(() {
-            steps=stepOne();
-          });
-          },
-           child: const Text("Step One")),
-      ]),),)
+      body:Padding(
+              padding: const EdgeInsets.all(2),
+              child: steps
+      ),
+      floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton(onPressed: NextStep, child: const Icon(Icons.arrow_forward_ios)),
      );
   }
 }
