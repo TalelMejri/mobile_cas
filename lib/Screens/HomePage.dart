@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_cas/Screens/Dashboard.dart';
 import 'package:mobile_cas/Screens/Steps/StepFour.dart';
 import 'package:mobile_cas/Screens/Steps/StepOne.dart';
 import 'package:mobile_cas/Screens/Steps/StepThree.dart';
@@ -44,7 +45,7 @@ class _HomePageState extends State<HomePage> {
         compt++;
       }else if(compt==4){
         steps= const StepOne();
-        compt=1;
+        Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>const Dashboard()));
       }
     });
   }
