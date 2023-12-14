@@ -36,7 +36,7 @@ class _StepFourState extends State<StepFour> {
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
               var image = images[index];
-              return Image.asset(image, width: 300);
+              return Image.asset(image, width: 200);
             },
           ),
         ),
