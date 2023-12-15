@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:pie_chart/pie_chart.dart';
 class Biogas extends StatefulWidget {
   const Biogas({super.key});
 
@@ -8,9 +8,28 @@ class Biogas extends StatefulWidget {
 }
 
 class _BiogasState extends State<Biogas> {
+Map<String, double> dataMap = {
+    "Empty": 1,
+    "Biogas":5
+  };
 
 @override
   Widget build(BuildContext context) {
-    return  Text("Biogas");
+      return Scaffold(
+      body: Container(
+        child: Center(
+          child: PieChart(
+            dataMap: dataMap,
+            chartRadius: MediaQuery.of(context).size.width / 1.7,
+            legendOptions: LegendOptions(
+              legendPosition: LegendPosition.bottom,
+            ),
+            chartValuesOptions: ChartValuesOptions(
+              showChartValuesInPercentage: true,
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }

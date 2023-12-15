@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_echarts/flutter_echarts.dart';
+import 'package:pie_chart/pie_chart.dart';
 
 class Trash extends StatefulWidget {
   const Trash({super.key});
@@ -10,28 +10,28 @@ class Trash extends StatefulWidget {
 
 class _TrashState extends State<Trash> {
 
-@override
+ Map<String, double> dataMap = {
+    "Empty": 5,
+    "trash":5
+  };
+
+ @override
   Widget build(BuildContext context) {
-    return  Container(
-  child: Echarts(
-  option: '''
-    {
-      xAxis: {
-        type: 'category',
-        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-      },
-      yAxis: {
-        type: 'value'
-      },
-      series: [{
-        data: [820, 932, 901, 934, 1290, 1330, 1320],
-        type: 'line'
-      }]
-    }
-  ''',
-  ),
-  width: 300,
-  height: 250,
-);
+    return Scaffold(
+      body: Container(
+        child: Center(
+          child: PieChart(
+            dataMap: dataMap,
+            chartRadius: MediaQuery.of(context).size.width / 1.7,
+            legendOptions: LegendOptions(
+              legendPosition: LegendPosition.bottom,
+            ),
+            chartValuesOptions: ChartValuesOptions(
+              showChartValuesInPercentage: true,
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }
