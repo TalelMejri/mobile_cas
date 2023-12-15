@@ -4,7 +4,6 @@ import 'package:mobile_cas/Screens/Level/Biogas.dart';
 import 'package:mobile_cas/Screens/Level/Electricity.dart';
 import 'package:mobile_cas/Screens/Level/Methane.dart';
 import 'package:mobile_cas/Screens/Level/Trash.dart';
-import 'package:mobile_cas/Screens/Steps/StepOne.dart';
 
 class Dashboard extends StatefulWidget{
   const Dashboard({super.key});

@@ -13,6 +13,11 @@ Map<String, double> dataMap = {
     "Biogas":5
   };
 
+   List<Color> colorList = [
+    Colors.red, 
+    Colors.yellow, 
+  ];
+
 @override
   Widget build(BuildContext context) {
       return Scaffold(
@@ -27,6 +32,7 @@ Map<String, double> dataMap = {
             chartValuesOptions: ChartValuesOptions(
               showChartValuesInPercentage: true,
             ),
+            colorList: colorList,
           ),
         ),
       ),

@@ -12,7 +12,10 @@ Map<String, double> dataMap = {
     "Empty": 2,
     "Electricity":5
   };
-
+ List<Color> colorList = [
+    Colors.blue, 
+    Colors.green, 
+  ];
 @override
   Widget build(BuildContext context) {
       return Scaffold(
@@ -27,6 +30,7 @@ Map<String, double> dataMap = {
             chartValuesOptions: ChartValuesOptions(
               showChartValuesInPercentage: true,
             ),
+            colorList: colorList,
           ),
         ),
       ),

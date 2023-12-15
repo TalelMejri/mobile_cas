@@ -14,6 +14,11 @@ Map<String, double> dataMap = {
     "Methane":4
   };
 
+   List<Color> colorList = [
+    Colors.grey, 
+    const Color.fromARGB(255, 0, 41, 74), 
+  ];
+
 @override
   Widget build(BuildContext context) {
       return Scaffold(
@@ -28,6 +33,7 @@ Map<String, double> dataMap = {
             chartValuesOptions: ChartValuesOptions(
               showChartValuesInPercentage: true,
             ),
+            colorList: colorList,
           ),
         ),
       ),
