@@ -36,7 +36,7 @@ class _Dashboard extends State<Dashboard>{
           break;
         case 3:
           _selectIndex=3;
-          interface="Methane(CH4) Level";
+          interface="Fertilizers Level";
           _widget=Methane();
           break;
       }

@@ -11,7 +11,7 @@ class _MethaneState extends State<Methane> {
   
 Map<String, double> dataMap = {
     "Empty": 5,
-    "Methane":4
+    "Fertilizers":4
   };
 
    List<Color> colorList = [
